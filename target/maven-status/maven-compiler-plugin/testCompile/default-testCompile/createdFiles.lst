@@ -1,0 +1,7 @@
+step_Definitions\LoginSteps.class
+helpers\CommonUtils.class
+step_Definitions\Hooks.class
+step_Definitions\CreateAccountSteps.class
+page_Objects\LoginPage.class
+testRunner\UIRunner.class
+page_Objects\RegistrationPage.class

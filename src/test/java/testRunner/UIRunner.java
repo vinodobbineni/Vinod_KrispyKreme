@@ -6,8 +6,8 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "features/signin.feature",
-	glue = {"stepDefinitions"},
+@CucumberOptions(features = "features",
+	glue = {"step_Definitions"},
 	//tags = "regression",
 	strict = true,
 	plugin = {"pretty", "html:test-output", "json:target/cucumber.json",

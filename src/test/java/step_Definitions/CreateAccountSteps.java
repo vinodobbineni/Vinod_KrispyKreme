@@ -8,7 +8,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
+import junit.framework.Assert;
 import page_Objects.RegistrationPage;
 
 public class CreateAccountSteps {
@@ -65,11 +65,20 @@ public class CreateAccountSteps {
 		createAPage.createaccountBtn();
 	}
 
-	@Then("user should be get the successful message")
-	public void user_should_be_get_the_successful_message() throws InterruptedException {
+	@Then("^user should be get the (.*) message$")
+	public void user_should_be_get_the_successful_message(String status) throws InterruptedException {
+		if(status.equals("created")) {
 		createAPage.dwait();
 		String message =createAPage.succesfulmsg();
 		System.out.println(message);
+		//Assert.assertEquals(createAPage.s, false);
+		}else {
+			createAPage.dwait();
+			String message =createAPage.failmsg();
+			System.out.println(message);
+			Assert.assertEquals(createAPage.failmessage, message);
+			
+		}
 	}
 
 }
